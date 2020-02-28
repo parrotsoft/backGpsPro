@@ -7,6 +7,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 app.use(cors())
 
+const port = process.env.PORT || 8000;
+
 app.get('/', function(req, res) {
     res.json({msg: 'BackGpsPro Start...'});
 });
@@ -17,6 +19,6 @@ app.post('/', function(req, res) {
     res.json({msg: 'Location in...'});
 });
 
-app.listen(3000, function() {
+app.listen(port, function() {
     console.log('http://localhost:3000');
 });
