@@ -7,6 +7,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 app.use(cors())
 
+app.get('/', function(req, res) {
+    res.json({msg: 'BackGpsPro Start...'});
+});
+
 app.post('/', function(req, res) {
     const date = new Date();
     console.log(`${date.getHours()}:${date.getMinutes()} :: latitude = ${req.body.latitude} - longitude = ${req.body.longitude}`);
